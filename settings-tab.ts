@@ -1,4 +1,4 @@
-import { App, Editor, MarkdownView, Modal, Notice, Plugin, PluginSettingTab, Setting, request } from 'obsidian';
+import { App, PluginSettingTab, Setting } from 'obsidian';
 import LinkedinSync from 'main'
 import { signIn } from 'commands/signIn';
 

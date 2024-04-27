@@ -7,18 +7,18 @@ export async function signIn(plugin: any) {
     const client_id = Config.client_id;
     const client_secret = Config.client_secret;
 
-    var authWindow = new BrowserWindow({
+    let authWindow = new BrowserWindow({
         width: 800, 
         height: 600, 
         show: false,
     });
 
-    var authUrl = 'https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=' + client_id +'&client_secret=' + client_secret + '&scope=r_liteprofile+w_member_social&state=123456&redirect_uri=https://localhost/'
+    const authUrl = 'https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=' + client_id +'&client_secret=' + client_secret + '&scope=r_liteprofile+w_member_social&state=123456&redirect_uri=https://localhost/'
 
     authWindow.webContents.addListener('will-redirect', function (event, newUrl) {
         // Verifies that we've reached the redirect URI
         if (newUrl.indexOf("https://localhost/?code=") == 0) {
-            let code = newUrl.split('=')[1].split('&')[0]
+            const code = newUrl.split('=')[1].split('&')[0]
     
             request({
                 method: "POST",
