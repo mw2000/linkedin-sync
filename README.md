@@ -1,4 +1,4 @@
-## Linkedin Sync
+n## Linkedin Sync
 This is a very basic plugin that allows users to post articles that they write directly from obsidian to linkedin.
 
 ### Setup
